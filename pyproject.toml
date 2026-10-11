@@ -1,0 +1,18 @@
+[project]
+name = "veo"
+version = "0.1.0"
+description = "Veo generation, editing, task lookup, and native video loading through Ace Data Cloud"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31,<3"]
+classifiers = ["Operating System :: OS Independent"]
+
+[project.urls]
+Repository = "https://github.com/AceDataCloud/VeoComfyUI"
+Documentation = "https://github.com/AceDataCloud/VeoComfyUI#readme"
+"Bug Tracker" = "https://github.com/AceDataCloud/VeoComfyUI/issues"
+
+[tool.comfy]
+PublisherId = "acedatacloud"
+DisplayName = "Veo by Ace Data Cloud"
+Icon = "https://raw.githubusercontent.com/AceDataCloud/VeoComfyUI/main/assets/logo-400.png"

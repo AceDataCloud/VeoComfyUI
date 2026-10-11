@@ -1,0 +1,29 @@
+{
+  "tested_at": "2026-10-12",
+  "environment": "isolated ComfyUI 0.39.0 / Python 3.11.17 / CPU / local source checkout",
+  "node_registration": {
+    "count": 11,
+    "distinct_model_choices": 5,
+    "native_video_output": true
+  },
+  "workflow_imports": [
+    "01-submit-text-to-video.json",
+    "02-retrieve-and-save.json"
+  ],
+  "read_only_task_reuse": {
+    "source": "existing VeoDify E2E task; no new paid generation",
+    "task_id": "a5f64a83-2db3-4e01-8b71-e4ce5e091069",
+    "comfy_prompt_id": "1d6e43a5-6942-4c23-986e-238b2a181aa6",
+    "comfy_status": "success",
+    "saved_filename": "VeoReadOnlyTest_00001_.mp4",
+    "saved_bytes": 1078235,
+    "saved_duration_seconds": 6.02,
+    "saved_dimensions": [1280, 720],
+    "audio_streams": 1
+  },
+  "new_generation_tested": false,
+  "new_edit_tested": false,
+  "registry_published": false,
+  "manager_installed": false,
+  "billing_readback_tested": false
+}
