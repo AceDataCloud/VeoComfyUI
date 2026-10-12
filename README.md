@@ -1,8 +1,8 @@
 # Veo for ComfyUI by Ace Data Cloud
 
-Generate and edit Veo videos with your Ace Data Cloud account, retrieve the **same task ID**, and load completed results as ComfyUI's native `VIDEO` type. These nodes call a hosted API; no local model or GPU is needed. Paid actions consume Credits at the [current Veo price](https://platform.acedata.cloud/models).
+Generate and edit Veo videos with your Ace Data Cloud account, retrieve the **same task ID**, and load completed results as ComfyUI's native `VIDEO` type. These nodes call a hosted API; no local model or GPU is needed. Paid actions consume Credits at the [current Veo price](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_pricing).
 
-[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud) · [Issues](https://github.com/AceDataCloud/VeoComfyUI/issues)
+[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_home) · [Issues](https://github.com/AceDataCloud/VeoComfyUI/issues)
 
 | Nodes | Dify API action |
 | --- | --- |
@@ -32,6 +32,10 @@ This package targets ComfyUI 0.39.0 or newer because Load Video uses its native 
 
 ## Set your Ace Data Cloud key
 
+1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_api_key). If your account has no General application, choose **Initialize General Application**.
+2. Open **General application** and check access to the service used by this package. A service-specific application key is limited to that service. Copy an existing API key, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
+3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing and available Credits before a paid action.
+
 Set a key with Veo access in the **actual ComfyUI process environment**, then restart:
 
 ```bash
@@ -53,7 +57,7 @@ Import [02-retrieve-and-save.json](examples/02-retrieve-and-save.json), replace 
 
 ## Check usage and troubleshoot
 
-Find the submission by task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications). Read-only task queries and media downloads should not create another generation.
+Find the submission by task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_api_key). Read-only task queries and media downloads should not create another generation.
 
 | Symptom | Action |
 | --- | --- |
