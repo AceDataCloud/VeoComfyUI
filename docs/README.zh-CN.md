@@ -14,7 +14,9 @@
 
 ## 安装与 Key
 
-Registry 版本激活后，在 **ComfyUI-Manager → Custom Nodes** 搜索 **Veo**，确认发布者 `acedatacloud` 和包名 **Veo by Ace Data Cloud**，安装并重启。Registry ID 为 `veo`，源码为 `AceDataCloud/VeoComfyUI`。本地源码可用不代表市场安装成功。
+打开 **Manager → Custom Nodes Manager**，搜索 **Ace Data Cloud**，选择 **Veo by Ace Data Cloud**，核对发布者 **acedatacloud** 和源码仓库 [`AceDataCloud/VeoComfyUI`](https://github.com/AceDataCloud/VeoComfyUI)，再点击 **Install**。在 **Select Version** 版本对话框明确选择已批准的 Registry 稳定版 **0.1.0**；普通对话框可能默认高亮 **nightly**，本教程不要直接接受该选项。保留依赖自动安装。出现 **Restart Required** 后重启 ComfyUI，并刷新浏览器。Registry ID 为 `veo`。
+
+这条 Registry 稳定版安装路径已于 **2026-10-16 在原版 Linux CPU ComfyUI 0.41.0** 验证；该次安装验收没有提交生成或聊天请求。更新的宿主版本及每个收费动作仍需分别验证，模型可用性与价格以当前服务规则为准。
 
 源码安装：
 
