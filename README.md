@@ -1,8 +1,8 @@
 # Veo for ComfyUI by Ace Data Cloud
 
-Generate and edit Veo videos with your Ace Data Cloud account, retrieve the **same task ID**, and load completed results as ComfyUI's native `VIDEO` type. These nodes call a hosted API; no local model or GPU is needed. Paid actions consume Credits at the [current Veo price](https://platform.acedata.cloud/models).
+Generate and edit Veo videos with your Ace Data Cloud account, retrieve the **same task ID**, and load completed results as ComfyUI's native `VIDEO` type. These nodes call a hosted API; no local model or GPU is needed. Paid actions consume Credits at the [current Veo price](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_pricing).
 
-[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud) · [Issues](https://github.com/AceDataCloud/VeoComfyUI/issues)
+[简体中文](docs/README.zh-CN.md) · [Ace Data Cloud](https://platform.acedata.cloud?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_home) · [Issues](https://github.com/AceDataCloud/VeoComfyUI/issues)
 
 | Nodes | Dify API action |
 | --- | --- |
@@ -17,9 +17,11 @@ These nodes cover all **five model IDs** and seven tool definitions in the curre
 
 ## Install
 
-Once the Registry version is active, open **ComfyUI-Manager → Custom Nodes**, search **Veo**, confirm publisher **acedatacloud** and package **Veo by Ace Data Cloud**, install, and restart. The Registry ID is `veo`; source is `AceDataCloud/VeoComfyUI`. Source availability and Registry upload alone do not prove Manager installation.
+Open **Manager → Custom Nodes Manager** and search **Ace Data Cloud**. Select **Veo by Ace Data Cloud**, confirm publisher **acedatacloud** and source repository [`AceDataCloud/VeoComfyUI`](https://github.com/AceDataCloud/VeoComfyUI), then click **Install**. In **Select Version**, explicitly select the approved Registry stable release **0.1.0**. The normal dialog may initially highlight **nightly**; do not accept it for this stable-release tutorial. Keep dependency installation enabled. After **Restart Required**, restart ComfyUI and refresh the browser. Registry ID: `veo`.
 
-For local source testing:
+This Registry stable installation was verified on **2026-10-16 with original ComfyUI 0.41.0 on Linux CPU**. That test did not submit a generation or chat request. Newer host versions and each paid action require their own checks; model availability and price remain subject to the current service rules.
+
+For optional local source testing:
 
 ```bash
 cd /path/to/ComfyUI/custom_nodes
@@ -31,6 +33,10 @@ python -m pip install -r requirements.txt
 This package targets ComfyUI 0.39.0 or newer because Load Video uses its native `VIDEO` type. Restart and search for **Veo**.
 
 ## Set your Ace Data Cloud key
+
+1. Sign in to [Ace Data Cloud → Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_api_key). If your account has no General application, choose **Initialize General Application**.
+2. Open **General application** and check access to the service used by this package. A service-specific application key is limited to that service. Copy an existing API key, or choose **Manage Keys → Create** for a separate key named `ComfyUI`.
+3. Copy only the token string, without `Bearer ` or quotation marks. A platform management token is not the API key these nodes use. If you enable **Allowed APIs**, include every submission and task-query path used by your workflow. Check current pricing and available Credits before a paid action.
 
 Set a key with Veo access in the **actual ComfyUI process environment**, then restart:
 
@@ -53,7 +59,7 @@ Import [02-retrieve-and-save.json](examples/02-retrieve-and-save.json), replace 
 
 ## Check usage and troubleshoot
 
-Find the submission by task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications). Read-only task queries and media downloads should not create another generation.
+Find the submission by task or trace ID in the [Ace Data Cloud Console](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_en_api_key). Read-only task queries and media downloads should not create another generation.
 
 | Symptom | Action |
 | --- | --- |

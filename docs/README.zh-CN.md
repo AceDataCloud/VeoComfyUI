@@ -1,14 +1,22 @@
 # Ace Data Cloud 的 ComfyUI Veo 节点
 
-通过 Ace Data Cloud 生成和编辑 Veo 视频，按**同一个任务 ID**查询完成结果，再把视频作为 ComfyUI 原生 `VIDEO` 使用。节点调用云 API，无需本地显卡。收费以[当前 Veo 价格](https://platform.acedata.cloud/models)为准。
+通过 Ace Data Cloud 生成和编辑 Veo 视频，按**同一个任务 ID**查询完成结果，再把视频作为 ComfyUI 原生 `VIDEO` 使用。节点调用云 API，无需本地显卡。收费以[当前 Veo 价格](https://platform.acedata.cloud/models?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_zh_cn_pricing)为准。
 
 [English guide](../README.md)
+
+## 获取 API Key
+
+1. 登录 [Ace Data Cloud → 应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_zh_cn_api_key)。新账户没有通用应用时，先选择**初始化通用应用**。
+2. 打开**通用应用**，确认已开通本节点使用的服务。单服务应用的 Key 只限该服务。可复制已有 API Key；需要独立 Key 时，选择**管理 Key → 创建**，命名为 `ComfyUI`。
+3. 只复制 Token 字符串，不加 `Bearer ` 或引号。平台管理 Token 不能代替节点调用 API 的 Key。若启用**允许的 API**限制，需同时包含工作流用到的提交和任务查询路径；收费动作前核对当前价格与 Credits 余额。
 
 本包覆盖当前 [VeoDify](https://github.com/AceDataCloud/VeoDify) 的 **5 个 model ID 与 7 个工具定义**：文生视频、首尾帧图生视频、多图融合、`get1080p`、延长、物体增删、镜头重拍、清晰度提升、单任务/批量查询。额外的 Load Video 节点把结果接入 ComfyUI `VIDEO`。
 
 ## 安装与 Key
 
-Registry 版本激活后，在 **ComfyUI-Manager → Custom Nodes** 搜索 **Veo**，确认发布者 `acedatacloud` 和包名 **Veo by Ace Data Cloud**，安装并重启。Registry ID 为 `veo`，源码为 `AceDataCloud/VeoComfyUI`。本地源码可用不代表市场安装成功。
+打开 **Manager → Custom Nodes Manager**，搜索 **Ace Data Cloud**，选择 **Veo by Ace Data Cloud**，核对发布者 **acedatacloud** 和源码仓库 [`AceDataCloud/VeoComfyUI`](https://github.com/AceDataCloud/VeoComfyUI)，再点击 **Install**。在 **Select Version** 版本对话框明确选择已批准的 Registry 稳定版 **0.1.0**；普通对话框可能默认高亮 **nightly**，本教程不要直接接受该选项。保留依赖自动安装。出现 **Restart Required** 后重启 ComfyUI，并刷新浏览器。Registry ID 为 `veo`。
+
+这条 Registry 稳定版安装路径已于 **2026-10-16 在原版 Linux CPU ComfyUI 0.41.0** 验证；该次安装验收没有提交生成或聊天请求。更新的宿主版本及每个收费动作仍需分别验证，模型可用性与价格以当前服务规则为准。
 
 源码安装：
 
@@ -29,4 +37,4 @@ python -m pip install -r requirements.txt
 
 导入 [02-retrieve-and-save.json](../examples/02-retrieve-and-save.json)，填入**同一个任务 ID**，运行 **Retrieve Task → Load Video → Save Video**。240 秒后仍 pending 时，只重跑查询工作流。批量查询节点可查询 1–20 个已有 ID。
 
-提交超时或 HTTP 5xx 时，先到 [Ace Data Cloud 控制台](https://platform.acedata.cloud/console/applications)按任务或 Trace ID 核对是否受理，再决定是否重新收费提交。详见[隐私说明](PRIVACY.md)。
+提交超时或 HTTP 5xx 时，先到 [Ace Data Cloud 控制台](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen&utm_content=veocomfyui_readme_zh_cn_api_key)按任务或 Trace ID 核对是否受理，再决定是否重新收费提交。详见[隐私说明](PRIVACY.md)。
