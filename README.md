@@ -15,6 +15,13 @@ Generate and edit Veo videos with your Ace Data Cloud account, retrieve the **sa
 
 These nodes cover all **five model IDs** and seven tool definitions in the current [VeoDify](https://github.com/AceDataCloud/VeoDify) package. `veo3`, `veo3-fast`, `veo31`, and `veo31-fast` are available for text or first/last-frame image input. `veo31-fast-ingredients` requires 1–3 reference images. Extend accepts only `veo31-fast` and `veo31`. Availability, quality, resolution, and price vary by model.
 
+
+## Current version and install source
+
+This source version is **0.1.1**. Check [GitHub Releases](https://github.com/AceDataCloud/VeoComfyUI/releases) for its versioned ZIP. The Registry section below retains the last verified **Active 0.1.0 on 2026-10-19**; that older ZIP does not contain this release's updated guide, examples or fixes. To use this version, install its GitHub Release ZIP, or select the exact **0.1.1** Registry release once it becomes Active. Do not substitute the initial nightly selection for a verified stable release.
+
+To install the GitHub ZIP, stop ComfyUI and back up any existing node directory. Extract the ZIP contents into `ComfyUI/custom_nodes/veo/` without adding an extra nested directory, run `python -m pip install -r requirements.txt` there, then restart and refresh. Keep the API Token in the actual launch-process environment. A GitHub ZIP install is separate from a verified Registry/Manager stable installation.
+
 ## Install
 
 Open the official [Veo by Ace Data Cloud Registry page](https://registry.comfy.org/nodes/veo), or search **Veo** in **Manager → Custom Nodes Manager**. Verify the exact Ace publisher/repository below; use **Ace Data Cloud** as a fallback if the service spelling does not return it. Select **Veo by Ace Data Cloud**, confirm publisher **acedatacloud** and source repository [`AceDataCloud/VeoComfyUI`](https://github.com/AceDataCloud/VeoComfyUI), then click **Install**. In **Select Version**, explicitly select the approved Registry stable release **0.1.0**. The normal dialog may initially highlight **nightly**; do not accept it for this stable-release tutorial. Keep dependency installation enabled. After **Restart Required**, restart ComfyUI and refresh the browser. Registry ID: `veo`.
