@@ -1,6 +1,6 @@
 [project]
 name = "veo"
-version = "0.1.1"
+version = "0.1.2"
 description = "Veo generation, editing, task lookup, and native video loading through Ace Data Cloud"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
@@ -14,5 +14,5 @@ Documentation = "https://github.com/AceDataCloud/VeoComfyUI#readme"
 
 [tool.comfy]
 PublisherId = "acedatacloud"
-DisplayName = "Veo by Ace Data Cloud"
+DisplayName = "Veo"
 Icon = "https://raw.githubusercontent.com/AceDataCloud/VeoComfyUI/main/assets/logo-400.png"
